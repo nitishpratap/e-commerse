@@ -4,7 +4,7 @@ const monngodb_url = 'mongodb+srv://nitish:nitishpratap@cluster0.r8fqbuf.mongodb
 let conn = mongoose.connect(monngodb_url,
     err => {
         if(err) throw err;
-        console.log('connected to MongoDB')
+        console.log('connected to MongoDB with command ',monngodb_url);
     });
 
 module.exports= conn
