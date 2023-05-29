@@ -1,12 +1,10 @@
 const mongoose = require('mongoose');
-const conn = mongoose.connect('mongodb://localhost:27017/btp',{
-    useNewUrlParser: true,
-    //   useFindAndModify: false,
-      useUnifiedTopology: true
-});
-conn.then(()=>{
-    console.log('connection is sucessfull');
-}).catch(function(e){
-    console.log(e);
-})
-module.exports = conn;
+
+const monngodb_url = 'mongodb+srv://nitish:nitishpratap@cluster0.r8fqbuf.mongodb.net/eTrade?retryWrites=true&w=majority'
+let conn = mongoose.connect(monngodb_url,
+    err => {
+        if(err) throw err;
+        console.log('connected to MongoDB')
+    });
+
+module.exports= conn
